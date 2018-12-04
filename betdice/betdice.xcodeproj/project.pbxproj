@@ -1,0 +1,424 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		408D3217BBAFB6FECBDD1FC0 /* Pods_betdice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A15994A4FF895D0F5513DF4 /* Pods_betdice.framework */; };
+		655AEEDC21B50FD4008D8647 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 655AEEDB21B50FD4008D8647 /* AppDelegate.m */; };
+		655AEEE121B50FD5008D8647 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 655AEEE021B50FD5008D8647 /* Assets.xcassets */; };
+		655AEEE721B50FD5008D8647 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 655AEEE621B50FD5008D8647 /* main.m */; };
+		655AEEF221B5121B008D8647 /* BDStatusBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 655AEEF021B5121B008D8647 /* BDStatusBarViewController.m */; };
+		655AEEF321B5121B008D8647 /* BDStatusBarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 655AEEF121B5121B008D8647 /* BDStatusBarViewController.xib */; };
+		658E2DD121B52E7C001B8D7E /* BDGameHistory.m in Sources */ = {isa = PBXBuildFile; fileRef = 658E2DD021B52E7C001B8D7E /* BDGameHistory.m */; };
+		658E2DD421B61C51001B8D7E /* NSDate+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 658E2DD221B61C50001B8D7E /* NSDate+Extension.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0A15994A4FF895D0F5513DF4 /* Pods_betdice.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_betdice.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		388F4DF4A93BCCD5216E99B7 /* Pods-betdice.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-betdice.release.xcconfig"; path = "Pods/Target Support Files/Pods-betdice/Pods-betdice.release.xcconfig"; sourceTree = "<group>"; };
+		655AEED721B50FD4008D8647 /* betdice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = betdice.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		655AEEDA21B50FD4008D8647 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		655AEEDB21B50FD4008D8647 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		655AEEE021B50FD5008D8647 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		655AEEE521B50FD5008D8647 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		655AEEE621B50FD5008D8647 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		655AEEE821B50FD5008D8647 /* betdice.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = betdice.entitlements; sourceTree = "<group>"; };
+		655AEEEF21B5121B008D8647 /* BDStatusBarViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDStatusBarViewController.h; sourceTree = "<group>"; };
+		655AEEF021B5121B008D8647 /* BDStatusBarViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BDStatusBarViewController.m; sourceTree = "<group>"; };
+		655AEEF121B5121B008D8647 /* BDStatusBarViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BDStatusBarViewController.xib; sourceTree = "<group>"; };
+		658E2DCF21B52E7C001B8D7E /* BDGameHistory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDGameHistory.h; sourceTree = "<group>"; };
+		658E2DD021B52E7C001B8D7E /* BDGameHistory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BDGameHistory.m; sourceTree = "<group>"; };
+		658E2DD221B61C50001B8D7E /* NSDate+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Extension.m"; sourceTree = "<group>"; };
+		658E2DD321B61C51001B8D7E /* NSDate+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Extension.h"; sourceTree = "<group>"; };
+		902B89E3F66198A8EDE0654A /* Pods-betdice.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-betdice.debug.xcconfig"; path = "Pods/Target Support Files/Pods-betdice/Pods-betdice.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		655AEED421B50FD4008D8647 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				408D3217BBAFB6FECBDD1FC0 /* Pods_betdice.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		63212E0B7C2EA5215066A12D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0A15994A4FF895D0F5513DF4 /* Pods_betdice.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		655AEECE21B50FD3008D8647 = {
+			isa = PBXGroup;
+			children = (
+				655AEED921B50FD4008D8647 /* betdice */,
+				655AEED821B50FD4008D8647 /* Products */,
+				B7D88E3D0B101501B48CC375 /* Pods */,
+				63212E0B7C2EA5215066A12D /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		655AEED821B50FD4008D8647 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				655AEED721B50FD4008D8647 /* betdice.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		655AEED921B50FD4008D8647 /* betdice */ = {
+			isa = PBXGroup;
+			children = (
+				655AEEDA21B50FD4008D8647 /* AppDelegate.h */,
+				655AEEDB21B50FD4008D8647 /* AppDelegate.m */,
+				655AEEEE21B511E6008D8647 /* statusBar */,
+				655AEEE021B50FD5008D8647 /* Assets.xcassets */,
+				655AEEE521B50FD5008D8647 /* Info.plist */,
+				655AEEE621B50FD5008D8647 /* main.m */,
+				655AEEE821B50FD5008D8647 /* betdice.entitlements */,
+			);
+			path = betdice;
+			sourceTree = "<group>";
+		};
+		655AEEEE21B511E6008D8647 /* statusBar */ = {
+			isa = PBXGroup;
+			children = (
+				658E2DD321B61C51001B8D7E /* NSDate+Extension.h */,
+				658E2DD221B61C50001B8D7E /* NSDate+Extension.m */,
+				655AEEEF21B5121B008D8647 /* BDStatusBarViewController.h */,
+				655AEEF021B5121B008D8647 /* BDStatusBarViewController.m */,
+				655AEEF121B5121B008D8647 /* BDStatusBarViewController.xib */,
+				658E2DCF21B52E7C001B8D7E /* BDGameHistory.h */,
+				658E2DD021B52E7C001B8D7E /* BDGameHistory.m */,
+			);
+			path = statusBar;
+			sourceTree = "<group>";
+		};
+		B7D88E3D0B101501B48CC375 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				902B89E3F66198A8EDE0654A /* Pods-betdice.debug.xcconfig */,
+				388F4DF4A93BCCD5216E99B7 /* Pods-betdice.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		655AEED621B50FD4008D8647 /* betdice */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 655AEEEB21B50FD5008D8647 /* Build configuration list for PBXNativeTarget "betdice" */;
+			buildPhases = (
+				132FA81F0E3641B89E84C1CB /* [CP] Check Pods Manifest.lock */,
+				655AEED321B50FD4008D8647 /* Sources */,
+				655AEED421B50FD4008D8647 /* Frameworks */,
+				655AEED521B50FD4008D8647 /* Resources */,
+				D1CC7F65ACB8F95C9E82A252 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = betdice;
+			productName = betdice;
+			productReference = 655AEED721B50FD4008D8647 /* betdice.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		655AEECF21B50FD3008D8647 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = BD;
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = BlueHedgehog;
+				TargetAttributes = {
+					655AEED621B50FD4008D8647 = {
+						CreatedOnToolsVersion = 10.1;
+					};
+				};
+			};
+			buildConfigurationList = 655AEED221B50FD3008D8647 /* Build configuration list for PBXProject "betdice" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 655AEECE21B50FD3008D8647;
+			productRefGroup = 655AEED821B50FD4008D8647 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				655AEED621B50FD4008D8647 /* betdice */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		655AEED521B50FD4008D8647 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				655AEEE121B50FD5008D8647 /* Assets.xcassets in Resources */,
+				655AEEF321B5121B008D8647 /* BDStatusBarViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		132FA81F0E3641B89E84C1CB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-betdice-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D1CC7F65ACB8F95C9E82A252 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-betdice/Pods-betdice-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/MJExtension/MJExtension.framework",
+				"${BUILT_PRODUCTS_DIR}/SocketRocket/SocketRocket.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJExtension.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SocketRocket.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-betdice/Pods-betdice-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		655AEED321B50FD4008D8647 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				655AEEF221B5121B008D8647 /* BDStatusBarViewController.m in Sources */,
+				658E2DD421B61C51001B8D7E /* NSDate+Extension.m in Sources */,
+				655AEEE721B50FD5008D8647 /* main.m in Sources */,
+				658E2DD121B52E7C001B8D7E /* BDGameHistory.m in Sources */,
+				655AEEDC21B50FD4008D8647 /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		655AEEE921B50FD5008D8647 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		655AEEEA21B50FD5008D8647 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		655AEEEC21B50FD5008D8647 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 902B89E3F66198A8EDE0654A /* Pods-betdice.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = betdice/betdice.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = Z5925Z5NR4;
+				INFOPLIST_FILE = betdice/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				PRODUCT_BUNDLE_IDENTIFIER = bh.betdice;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		655AEEED21B50FD5008D8647 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 388F4DF4A93BCCD5216E99B7 /* Pods-betdice.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = betdice/betdice.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = Z5925Z5NR4;
+				INFOPLIST_FILE = betdice/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				PRODUCT_BUNDLE_IDENTIFIER = bh.betdice;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		655AEED221B50FD3008D8647 /* Build configuration list for PBXProject "betdice" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				655AEEE921B50FD5008D8647 /* Debug */,
+				655AEEEA21B50FD5008D8647 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		655AEEEB21B50FD5008D8647 /* Build configuration list for PBXNativeTarget "betdice" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				655AEEEC21B50FD5008D8647 /* Debug */,
+				655AEEED21B50FD5008D8647 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 655AEECF21B50FD3008D8647 /* Project object */;
+}
