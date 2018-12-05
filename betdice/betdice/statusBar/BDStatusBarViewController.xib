@@ -101,16 +101,16 @@
                         <constraint firstAttribute="height" constant="20" id="7wd-pO-FvV"/>
                         <constraint firstAttribute="width" constant="54" id="puh-Vx-9gs"/>
                     </constraints>
-                    <popUpButtonCell key="cell" type="push" title="4" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="bLI-wc-MJ3" id="B97-Sc-mI7">
+                    <popUpButtonCell key="cell" type="push" title="6" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="jlP-1Z-IeF" id="B97-Sc-mI7">
                         <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="menu"/>
                         <menu key="menu" id="xsU-ba-ise">
                             <items>
                                 <menuItem title="2" id="eu6-l9-Blm" userLabel="2"/>
                                 <menuItem title="3" id="0uh-Zn-RHt" userLabel="3"/>
-                                <menuItem title="4" state="on" id="bLI-wc-MJ3"/>
+                                <menuItem title="4" id="bLI-wc-MJ3"/>
                                 <menuItem title="5" id="h0F-vU-egc"/>
-                                <menuItem title="6" id="jlP-1Z-IeF"/>
+                                <menuItem title="6" state="on" id="jlP-1Z-IeF"/>
                                 <menuItem title="7" id="M2M-MQ-zVN"/>
                                 <menuItem title="8" id="UCK-mf-IRz"/>
                                 <menuItem title="9" id="GBM-7f-Ss2"/>
@@ -128,14 +128,14 @@
                         <constraint firstAttribute="width" constant="54" id="MSR-Pt-mTo"/>
                         <constraint firstAttribute="height" constant="20" id="Rap-F2-yx9"/>
                     </constraints>
-                    <popUpButtonCell key="cell" type="push" title="5" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="ZLc-Mx-Wb2" id="qht-tZ-gGE">
+                    <popUpButtonCell key="cell" type="push" title="15" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="DOx-AT-wbz" id="qht-tZ-gGE">
                         <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="menu"/>
                         <menu key="menu" id="9Lx-NT-nmM">
                             <items>
-                                <menuItem title="5" state="on" id="ZLc-Mx-Wb2"/>
+                                <menuItem title="5" id="ZLc-Mx-Wb2"/>
                                 <menuItem title="10" id="sIP-79-qS4"/>
-                                <menuItem title="15" id="DOx-AT-wbz"/>
+                                <menuItem title="15" state="on" id="DOx-AT-wbz"/>
                                 <menuItem title="20" id="LLQ-Ba-z3o"/>
                                 <menuItem title="30" id="A9L-t8-Ndz"/>
                                 <menuItem title="40" id="DhY-cF-wuO"/>
@@ -205,7 +205,7 @@
                     <rect key="frame" x="6" y="6" width="466" height="14"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="我要小额赞助，鼓励作者优化 EOS地址:bluehedgehog" id="117-yX-jll">
-                        <font key="font" metaFont="system" size="11"/>
+                        <font key="font" metaFont="smallSystem"/>
                         <color key="textColor" name="alternateSelectedControlColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>

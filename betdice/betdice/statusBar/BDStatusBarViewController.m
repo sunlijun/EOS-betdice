@@ -93,17 +93,9 @@
     localNotify.title = title;
     localNotify.informativeText = body;
     localNotify.soundName = NSUserNotificationDefaultSoundName;
+    localNotify.hasActionButton = NO;
     [[NSUserNotificationCenter defaultUserNotificationCenter] deliverNotification:localNotify];
 }
-
-
-- (void)viewDidDisappear
-{
-    [super viewDidDisappear];
-    //    [_webSocket close];
-    //    _webSocket = nil;
-}
-
 
 #pragma mark - SRWebSocketDelegate
 - (void)webSocketDidOpen:(SRWebSocket *)webSocket;
@@ -153,7 +145,7 @@
                 NSString *flagTitle =  array.firstObject;
                 if ([flagTitle isEqualToString:@"gameHistory"]) {
                     NSArray *hisList =  array.lastObject;
-//                    NSLog(@"%@",hisList);
+                    //                    NSLog(@"%@",hisList);
                     NSArray *hisModelList = [BDGameHistory mj_objectArrayWithKeyValuesArray:hisList];
                     [self setNewHistoryList:hisModelList];
                     
@@ -199,52 +191,135 @@
     [self.historyList addObjectsFromArray:reversedArray];
     NSInteger winNum = 1;
     NSMutableArray *winlist = [NSMutableArray array];
-    self.recWin.stringValue = [NSString stringWithFormat:@"最近Win：%@",[self changeString:self.historyList.firstObject.result]];
     BDGameHistory *preRes = [BDGameHistory new];
     NSMutableString *resultStr = [NSMutableString string];
-    for (NSInteger i = 0 ; i < self.historyList.count; i ++) {
-        BDGameHistory *res = self.historyList[i];
-        [resultStr appendString:[self changeString:res.result]];
-    }
-    self.resultText.stringValue = resultStr;
+    
+// test s
+//    NSMutableArray *testlist = [NSMutableArray arrayWithCapacity:self.historyList.count];
+//test e
     
     for (NSInteger i = 0 ; i < self.historyList.count; i ++) {
         BDGameHistory *res = self.historyList[i];
-        if(i == 0 ){preRes = res; continue;}
-        BOOL isSame = true;
-        NSString *sameRes = nil;
-        for (NSString *res in winlist) {
-            if ([res isEqualToString:@"tie"]) { continue; }
-            if (![sameRes isEqualToString:res]) { isSame = false;}
-            sameRes = res;
+//        test s
+        /*
+        // 用例1 庄 庄 闲 庄 闲            ok
+        // 用例2 庄 闲 庄 庄              ok
+        // 用例3 庄 平 庄 平 庄 闲         ok
+        // 用例4 庄 平 平 庄 平 庄 闲      ok
+        // 用例5 庄 平 平 平 庄 闲        ok
+        // 用例6 庄 平 平 庄 平 庄 闲     ok
+        // 用例7 庄 庄 平 庄 平 闲        ok
+        // 用例7 庄 庄 平 庄 庄 闲        ok
+        // 用例8 平 庄 平 平 庄 闲        ok
+        // 用例9 平 庄 庄 平 庄 闲        ok
+        // 用例9 平 平 平 庄 平 庄 闲     ok
+        // 用例10 平 平 庄 庄 平 庄 闲    ok
+        if (i == 0  )
+        {
+            res.result = @"tie";
+        }else if (i == 1){
+            res.result = @"tie";
+        }else if (i == 2){
+            res.result = @"banker";
+        }else if (i == 3){
+            res.result = @"banker";
+        }else if (i == 4){
+            res.result = @"tie"; //player  banker  tie
+        }else if (i == 5)
+        {
+            res.result = @"banker";
+        }else if (i ==6 )
+        {
+            res.result = @"player";
         }
-        if (isSame == false) { winNum = 1; }
         
-//        NSLog(@"preRes.result  %@   res.result %@   self.tieCheck.state  %ld",preRes.result,res.result ,self.tieCheck.state);
-        if ([preRes.result isEqualToString:res.result] ||
-            (self.tieCheck.state == YES && [res.result isEqualToString:@"tie"])||
-            (self.tieCheck.state == YES && [preRes.result isEqualToString:@"tie"])) {
-            winNum ++;
-            [winlist addObject:res.result];
+        [testlist addObject:res];
+        */
+//        test s
+        [resultStr appendString:[self changeString:res.result]];
+    }
+//    test s
+//    [self.historyList removeAllObjects];
+//    [self.historyList addObjectsFromArray:testlist];
+//    test e
+    
+    self.recWin.stringValue = [NSString stringWithFormat:@"最近Win：%@",[self changeString:self.historyList.firstObject.result]];
+    self.resultText.stringValue = resultStr;
+    for (NSInteger j = 0 ; j < self.historyList.count; j ++) {
+        BDGameHistory *res = self.historyList[j];
+        // 上一条记录
+        if(j == 0 ){preRes = res;   [winlist addObject:res.result];; continue;}
+       
+        NSString *sameRes = winlist.firstObject;
+        // 条件1 前后，中间是平，都累加 或者2数相等
+        if ([preRes.result isEqualToString:res.result] || (self.tieCheck.state == YES && [res.result isEqualToString:@"tie"])||
+            (self.tieCheck.state == YES && [preRes.result isEqualToString:@"tie"]))
+        {
             
+            BOOL isSame = true;
+            for (NSInteger i = 0 ; i <  winlist.count ; i ++) {
+                
+                NSString *res = winlist[i];
+                // 平局忽略，首个平局忽略
+                if ([res isEqualToString:@"tie"]  || (i == 0 && [sameRes isEqualToString:winlist[i] ]) ) {
+                    continue;
+                }
+                if (![sameRes isEqualToString:res] && ![sameRes isEqualToString:@"tie"]) { isSame = false; }
+                sameRes = res;
+            }
+            if (([sameRes isEqualToString:res.result] || [res.result isEqualToString:@"tie"]  || [sameRes isEqualToString:@"tie"])&& isSame)
+            {
+                [winlist addObject:res.result];
+            }else {
+//                NSString *body = [NSString stringWithFormat:@"当前 %@ 已经连赢%ld 次",[self changeString:sameRes],winNum];
+//                NSLog(@"shang tiaojie %@",body );
+//                if (winNum >= self.tipsNumBtn.selectedItem.title.integerValue) {
+//                    if (self.timestamp == 0 ||   [NSDate date].timestamp.integerValue- self.timestamp > self.tipsTimeBtn.selectedItem.title.integerValue) {
+//                        self.timestamp = [NSDate date].timestamp.integerValue ;
+//                        [self pushNotification:@"警报！！！！" body:body];
+//                    }
+//                }
+//                self.conWin.stringValue = body;
+//                [winlist removeAllObjects];
+//                winNum = 1;
+                [self pushNotiWithWinner:[self changeString:sameRes] winNum:winNum winlist:winlist];
+                break;
+            }
+            winNum ++;
         }
         else {
-//            NSLog(@"winnum  = %ld",winNum);
             // 连赢，只有庄或者闲 ，次数加上平
-            NSString *body = [NSString stringWithFormat:@"当前 %@ 已经连赢%ld 次",[self changeString:preRes.result],winNum];
-            if (winNum >= self.tipsNumBtn.selectedItem.title.integerValue) {
-                //                 NSLog(@"timestamp  %ld ,[NSDate date].timestamp.integerValue- self.timestamp %ld    date = %ld",self.timestamp,[NSDate date].timestamp.integerValue- self.timestamp, [NSDate date].timestamp.integerValue);
-                if (self.timestamp == 0 ||   [NSDate date].timestamp.integerValue- self.timestamp > self.tipsTimeBtn.selectedItem.title.integerValue) {
-                    self.timestamp = [NSDate date].timestamp.integerValue ;
-                    [self pushNotification:@"警报！！！！" body:body];
-                }
-            }
-            self.conWin.stringValue = body;
-            [winlist removeAllObjects];
-            winNum = 1; break;
+//            NSString *body = [NSString stringWithFormat:@"当前 %@ 已经连赢%ld 次",[self changeString:preRes.result],winNum];
+//            NSLog(@"xia tiaojie %@",body );
+//            if (winNum >= self.tipsNumBtn.selectedItem.title.integerValue) {
+//                if (self.timestamp == 0 ||   [NSDate date].timestamp.integerValue- self.timestamp > self.tipsTimeBtn.selectedItem.title.integerValue) {
+//                    self.timestamp = [NSDate date].timestamp.integerValue ;
+//                    [self pushNotification:@"警报！！！！" body:body];
+//                }
+//            }
+//            self.conWin.stringValue = body;
+//            [winlist removeAllObjects];
+//            winNum = 1; break;
+            [self pushNotiWithWinner:[self changeString:preRes.result] winNum:winNum winlist:winlist];
+            break;
         }
         preRes = res;
     }
+}
+
+- (void)pushNotiWithWinner:(NSString *)winner winNum:(NSInteger)winNum winlist:(NSMutableArray *)winlist
+{
+    // 连赢，只有庄或者闲 ，次数加上平
+    NSString *body = [NSString stringWithFormat:@"当前 %@ 已经连赢%ld 次",winner,winNum];
+    if (winNum >= self.tipsNumBtn.selectedItem.title.integerValue) {
+        if (self.timestamp == 0 ||   [NSDate date].timestamp.integerValue- self.timestamp > self.tipsTimeBtn.selectedItem.title.integerValue) {
+            self.timestamp = [NSDate date].timestamp.integerValue ;
+            [self pushNotification:@"警报！！！！" body:body];
+        }
+    }
+    self.conWin.stringValue = body;
+    [winlist removeAllObjects];
+    winNum = 1;
 }
 
 #pragma mark 控件
@@ -255,23 +330,22 @@
     }else {
         sender.state = NO;
     }
-    
-//    NSLog(@"tie---%ld",sender.state);
+    //    NSLog(@"tie---%ld",sender.state);
 }
 
 - (IBAction)tipsTimeBtnClick:(NSPopUpButton *)sender {
-//    NSLog(@"选择了  %ld",sender.selectedItem.title.integerValue);
+    //    NSLog(@"选择了  %ld",sender.selectedItem.title.integerValue);
 }
 
 
 - (IBAction)tipsNumBtnClick:(NSPopUpButton *)sender {
-//    NSLog(@"选择了  %ld",sender.selectedItem.title.integerValue);
+    //    NSLog(@"选择了  %ld",sender.selectedItem.title.integerValue);
 }
 - (IBAction)exitBtnClick:(NSButton *)sender {
     [[NSApplication sharedApplication] terminate:self];
 }
 - (IBAction)touzhuBtnClick:(NSButton *)sender {
-     [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"https://betdice.one/baccarat/?ref=bluehedgehog"]];
+    [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"https://betdice.one/baccarat/?ref=bluehedgehog"]];
 }
 
 

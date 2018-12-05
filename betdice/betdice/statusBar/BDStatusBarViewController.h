@@ -11,7 +11,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface BDStatusBarViewController : NSViewController
-- (void)viewDidLoad;
+
 @end
 
 NS_ASSUME_NONNULL_END
