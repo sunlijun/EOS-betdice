@@ -198,6 +198,7 @@
     NSArray* reversedArray = [[list reverseObjectEnumerator] allObjects];
     [self.historyList addObjectsFromArray:reversedArray];
     NSInteger winNum = 1;
+    NSMutableArray *winlist = [NSMutableArray array];
     self.recWin.stringValue = [NSString stringWithFormat:@"最近Win：%@",[self changeString:self.historyList.firstObject.result]];
     BDGameHistory *preRes = [BDGameHistory new];
     NSMutableString *resultStr = [NSMutableString string];
@@ -210,12 +211,22 @@
     for (NSInteger i = 0 ; i < self.historyList.count; i ++) {
         BDGameHistory *res = self.historyList[i];
         if(i == 0 ){preRes = res; continue;}
+        BOOL isSame = true;
+        NSString *sameRes = nil;
+        for (NSString *res in winlist) {
+            if ([res isEqualToString:@"tie"]) { continue; }
+            if (![sameRes isEqualToString:res]) { isSame = false;}
+            sameRes = res;
+        }
+        if (isSame == false) { winNum = 1; }
+        
 //        NSLog(@"preRes.result  %@   res.result %@   self.tieCheck.state  %ld",preRes.result,res.result ,self.tieCheck.state);
         if ([preRes.result isEqualToString:res.result] ||
             (self.tieCheck.state == YES && [res.result isEqualToString:@"tie"])||
             (self.tieCheck.state == YES && [preRes.result isEqualToString:@"tie"])) {
             winNum ++;
-//            NSLog(@"winnum  = %ld",winNum);
+            [winlist addObject:res.result];
+            
         }
         else {
 //            NSLog(@"winnum  = %ld",winNum);
@@ -229,6 +240,7 @@
                 }
             }
             self.conWin.stringValue = body;
+            [winlist removeAllObjects];
             winNum = 1; break;
         }
         preRes = res;
