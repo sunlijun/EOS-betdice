@@ -193,55 +193,11 @@
     NSMutableArray *winlist = [NSMutableArray array];
     BDGameHistory *preRes = [BDGameHistory new];
     NSMutableString *resultStr = [NSMutableString string];
-    
-    // test s
-    //    NSMutableArray *testlist = [NSMutableArray arrayWithCapacity:self.historyList.count];
-    //test e
-    
+
     for (NSInteger i = 0 ; i < self.historyList.count; i ++) {
         BDGameHistory *res = self.historyList[i];
-        //        test s
-        /*
-// 用例1 庄 庄 闲 庄 闲            ok
-// 用例2 庄 闲 庄 庄              ok
-// 用例3 庄 平 庄 平 庄 闲         ok
-// 用例4 庄 平 平 庄 平 庄 闲      ok
-// 用例5 庄 平 平 平 庄 闲        ok
-// 用例6 庄 平 平 庄 平 庄 闲     ok
-// 用例7 庄 庄 平 庄 平 闲        ok
-// 用例7 庄 庄 平 庄 庄 闲        ok
-// 用例8 平 庄 平 平 庄 闲        ok
-// 用例9 平 庄 庄 平 庄 闲        ok
-// 用例9 平 平 平 庄 平 庄 闲     ok
-// 用例10 平 平 庄 庄 平 庄 闲    ok
-         if (i == 0  )
-         {
-         res.result = @"tie";
-         }else if (i == 1){
-         res.result = @"tie";
-         }else if (i == 2){
-         res.result = @"banker";
-         }else if (i == 3){
-         res.result = @"banker";
-         }else if (i == 4){
-         res.result = @"tie"; //player  banker  tie
-         }else if (i == 5)
-         {
-         res.result = @"banker";
-         }else if (i ==6 )
-         {
-         res.result = @"player";
-         }
-         
-         [testlist addObject:res];
-         */
-        //        test s
         [resultStr appendString:[self changeString:res.result]];
     }
-    //    test s
-    //    [self.historyList removeAllObjects];
-    //    [self.historyList addObjectsFromArray:testlist];
-    //    test e
     
     self.recWin.stringValue = [NSString stringWithFormat:@"最近Win：%@",[self changeString:self.historyList.firstObject.result]];
     self.resultText.stringValue = resultStr;
